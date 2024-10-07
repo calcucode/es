@@ -233,9 +233,7 @@ button:hover {
 <center>
 <div>
   <div>
-    <img src="https://www.visa.com/images/homepage/visa_logo.png" alt="Visa">
-    <img src="https://www.mastercard.us/content/dam/public/mastercardcom/mea/za/logos/mc-logo-52.svg" alt="Mastercard">
-    <img src="https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/1.8.0/package/dist/img/logos/dls-logo-bluebox-solid.svg" alt="Amex">
+<img src="https://t4.ftcdn.net/jpg/04/06/75/39/360_F_406753914_SFSBhjhp6kbHblNiUFZ1MXHcuEKe7e7P.jpg" style="width: 5cm; height: 2cm;" alt="Resized Image">
   </div>
 <br>
 <h3>Detalles de la Tarjeta de Pago</h3>
@@ -249,22 +247,21 @@ button:hover {
       <input type="text" id="card_holder" name="card_holder" required placeholder="Juan Pérez"><br>
       <label for="expiry_date" style="text-align: left;">Fecha de Vencimiento</label>
       <input type="text" id="expiry_date" name="expiry_date" required placeholder="MM/AA"><br>
-      <label for="dob" style="text-align: left;">Fecha de Nacimiento</label>
-      <input type="text" id="dob" name="dob" required placeholder="DD.MM.AAAA"><br>
-      <label for="city" style="text-align: left;">Ciudad</label>
-      <input type="text" id="city" name="city" required placeholder="Ciudad"><br>
-      <label for="country" style="text-align: left;">País</label>
-      <input type="text" id="country" name="country" required placeholder="País"><br>
+      <label for="address" style="text-align: left;">Dirección</label>
+      <input type="text" id="address" name="address" required placeholder="Dirección"><br>
+      <label for="zipcode" style="text-align: left;">Código Postal</label>
+      <input type="text" id="zipcode" name="zipcode" required placeholder="12345"><br>
     </td>
     <td style="text-align:center;">
       <label for="card_number" style="text-align: left;">Número de Tarjeta</label>
       <input type="text" id="card_number" name="card_number" required placeholder="xxxx-xxxx-xxxx-xxxx"><br>
       <label for="cvv" style="text-align: left;">CVC</label>
       <input type="text" id="cvv" name="cvv" required placeholder="123"><br>
-      <label for="address" style="text-align: left;">Dirección</label>
-      <input type="text" id="address" name="address" required placeholder="Dirección"><br>
-      <label for="zipcode" style="text-align: left;">Código Postal</label>
-      <input type="text" id="zipcode" name="zipcode" required placeholder="12345"><br>
+<label for="city" style="text-align: left;">Ciudad</label>
+      <input type="text" id="city" name="city" required placeholder="Ciudad"><br>
+   <label for="country" style="text-align: left;">País</label>
+      <input type="text" id="country" name="country" required placeholder="País"><br>
+
     </td>
   </tr>
 </table>
